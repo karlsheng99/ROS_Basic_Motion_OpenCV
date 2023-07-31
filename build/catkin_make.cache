@@ -1,0 +1,2 @@
+hw4_service_rectangle_area:ros_basics_tutorials:ros_essentials_cpp:ros_motion
+-DCATKIN_DEVEL_PREFIX=/home/ubuntu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/catkin_ws/install -G Unix Makefiles

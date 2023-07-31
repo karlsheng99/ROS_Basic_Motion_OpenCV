@@ -1,0 +1,4 @@
+<launch>
+    <node name="turtlesim" pkg="turtlesim" type="turtlesim_node" />
+    <node name="turtlesim_motion_pose_node" pkg="ros_motion" type="motion.py" output="screen"/>
+</launch>

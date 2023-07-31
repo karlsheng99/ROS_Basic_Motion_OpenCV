@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws/devel
+
+Name: hw4_service_rectangle_area
+Description: Description of hw4_service_rectangle_area
+Version: 0.0.0
+Cflags: -I/home/ubuntu/catkin_ws/devel/include -I/home/ubuntu/catkin_ws/src/hw4_service_rectangle_area/include
+Libs: -L${prefix}/lib -lhw4_service_rectangle_area
+Requires: roscpp rospy std_msgs message_runtime
