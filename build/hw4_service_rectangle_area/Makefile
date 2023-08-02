@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -77,6 +89,17 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install
 install: preinstall
@@ -89,18 +112,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -123,17 +134,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,19 +168,259 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+hw4_service_rectangle_area_gennodejs: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_py
+.PHONY : hw4_service_rectangle_area_gennodejs
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+hw4_service_rectangle_area_gennodejs/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/build
+.PHONY : hw4_service_rectangle_area_gennodejs/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+hw4_service_rectangle_area_generate_messages_nodejs: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/rule
+
+.PHONY : hw4_service_rectangle_area_generate_messages_nodejs
+
+# fast build rule for target.
+hw4_service_rectangle_area_generate_messages_nodejs/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/build
+.PHONY : hw4_service_rectangle_area_generate_messages_nodejs/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/rule
+
+# Convenience name for target.
+hw4_service_rectangle_area_geneus: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/rule
+
+.PHONY : hw4_service_rectangle_area_geneus
+
+# fast build rule for target.
+hw4_service_rectangle_area_geneus/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/build
+.PHONY : hw4_service_rectangle_area_geneus/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+hw4_service_rectangle_area_generate_messages_lisp: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/rule
+
+.PHONY : hw4_service_rectangle_area_generate_messages_lisp
+
+# fast build rule for target.
+hw4_service_rectangle_area_generate_messages_lisp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/build
+.PHONY : hw4_service_rectangle_area_generate_messages_lisp/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/rule
+
+# Convenience name for target.
+hw4_service_rectangle_area_gencpp: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/rule
+
+.PHONY : hw4_service_rectangle_area_gencpp
+
+# fast build rule for target.
+hw4_service_rectangle_area_gencpp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/build
+.PHONY : hw4_service_rectangle_area_gencpp/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/rule
+
+# Convenience name for target.
+hw4_service_rectangle_area_genpy: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/rule
+
+.PHONY : hw4_service_rectangle_area_genpy
+
+# fast build rule for target.
+hw4_service_rectangle_area_genpy/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/build
+.PHONY : hw4_service_rectangle_area_genpy/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+hw4_service_rectangle_area_generate_messages_eus: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/rule
+
+.PHONY : hw4_service_rectangle_area_generate_messages_eus
+
+# fast build rule for target.
+hw4_service_rectangle_area_generate_messages_eus/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/build
+.PHONY : hw4_service_rectangle_area_generate_messages_eus/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/build.make hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/build.make hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/rule
+
+# Convenience name for target.
+hw4_service_rectangle_area_genlisp: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/rule
+
+.PHONY : hw4_service_rectangle_area_genlisp
+
+# fast build rule for target.
+hw4_service_rectangle_area_genlisp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/build
+.PHONY : hw4_service_rectangle_area_genlisp/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/rule
+
+# Convenience name for target.
+_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService: hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/rule
+
+.PHONY : _hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService
+
+# fast build rule for target.
+_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/build.make hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/build
+.PHONY : _hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService/fast
+
+# Convenience name for target.
+hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
@@ -213,229 +453,19 @@ hw4_service_rectangle_area_generate_messages/fast:
 .PHONY : hw4_service_rectangle_area_generate_messages/fast
 
 # Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+rosgraph_msgs_generate_messages_py: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_lisp
+.PHONY : rosgraph_msgs_generate_messages_py
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/rule
-
-# Convenience name for target.
-hw4_service_rectangle_area_genlisp: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/rule
-
-.PHONY : hw4_service_rectangle_area_genlisp
-
-# fast build rule for target.
-hw4_service_rectangle_area_genlisp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genlisp.dir/build
-.PHONY : hw4_service_rectangle_area_genlisp/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/build.make hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/build.make hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/rule
-
-# Convenience name for target.
-hw4_service_rectangle_area_genpy: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/rule
-
-.PHONY : hw4_service_rectangle_area_genpy
-
-# fast build rule for target.
-hw4_service_rectangle_area_genpy/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_genpy.dir/build
-.PHONY : hw4_service_rectangle_area_genpy/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_py.dir/build.make hw4_service_rectangle_area/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/rule
-
-# Convenience name for target.
-_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService: hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/rule
-
-.PHONY : _hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService
-
-# fast build rule for target.
-_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/build.make hw4_service_rectangle_area/CMakeFiles/_hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService.dir/build
-.PHONY : _hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-hw4_service_rectangle_area_generate_messages_cpp: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/rule
-
-.PHONY : hw4_service_rectangle_area_generate_messages_cpp
-
-# fast build rule for target.
-hw4_service_rectangle_area_generate_messages_cpp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/build
-.PHONY : hw4_service_rectangle_area_generate_messages_cpp/fast
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_py.dir/rule:
@@ -453,124 +483,19 @@ hw4_service_rectangle_area_generate_messages_py/fast:
 .PHONY : hw4_service_rectangle_area_generate_messages_py/fast
 
 # Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/rule
+hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/rule
+.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-hw4_service_rectangle_area_gencpp: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/rule
+hw4_service_rectangle_area_generate_messages_cpp: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/rule
 
-.PHONY : hw4_service_rectangle_area_gencpp
+.PHONY : hw4_service_rectangle_area_generate_messages_cpp
 
 # fast build rule for target.
-hw4_service_rectangle_area_gencpp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gencpp.dir/build
-.PHONY : hw4_service_rectangle_area_gencpp/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-hw4_service_rectangle_area_generate_messages_lisp: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/rule
-
-.PHONY : hw4_service_rectangle_area_generate_messages_lisp
-
-# fast build rule for target.
-hw4_service_rectangle_area_generate_messages_lisp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_lisp.dir/build
-.PHONY : hw4_service_rectangle_area_generate_messages_lisp/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/rule
-
-# Convenience name for target.
-hw4_service_rectangle_area_geneus: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/rule
-
-.PHONY : hw4_service_rectangle_area_geneus
-
-# fast build rule for target.
-hw4_service_rectangle_area_geneus/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_geneus.dir/build
-.PHONY : hw4_service_rectangle_area_geneus/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-hw4_service_rectangle_area_generate_messages_nodejs: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/rule
-
-.PHONY : hw4_service_rectangle_area_generate_messages_nodejs
-
-# fast build rule for target.
-hw4_service_rectangle_area_generate_messages_nodejs/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_nodejs.dir/build
-.PHONY : hw4_service_rectangle_area_generate_messages_nodejs/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/rule
-
-# Convenience name for target.
-hw4_service_rectangle_area_gennodejs: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/rule
-
-.PHONY : hw4_service_rectangle_area_gennodejs
-
-# fast build rule for target.
-hw4_service_rectangle_area_gennodejs/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_gennodejs.dir/build
-.PHONY : hw4_service_rectangle_area_gennodejs/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/rule
-.PHONY : hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-hw4_service_rectangle_area_generate_messages_eus: hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/rule
-
-.PHONY : hw4_service_rectangle_area_generate_messages_eus
-
-# fast build rule for target.
-hw4_service_rectangle_area_generate_messages_eus/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_eus.dir/build
-.PHONY : hw4_service_rectangle_area_generate_messages_eus/fast
+hw4_service_rectangle_area_generate_messages_cpp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/build.make hw4_service_rectangle_area/CMakeFiles/hw4_service_rectangle_area_generate_messages_cpp.dir/build
+.PHONY : hw4_service_rectangle_area_generate_messages_cpp/fast
 
 # Help Target
 help:
@@ -579,39 +504,34 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... install"
-	@echo "... hw4_service_rectangle_area_generate_messages"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... install/local"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... hw4_service_rectangle_area_genlisp"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... hw4_service_rectangle_area_genpy"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... _hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService"
-	@echo "... hw4_service_rectangle_area_generate_messages_cpp"
-	@echo "... hw4_service_rectangle_area_generate_messages_py"
-	@echo "... edit_cache"
-	@echo "... hw4_service_rectangle_area_gencpp"
-	@echo "... hw4_service_rectangle_area_generate_messages_lisp"
-	@echo "... hw4_service_rectangle_area_geneus"
-	@echo "... hw4_service_rectangle_area_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... hw4_service_rectangle_area_gennodejs"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... hw4_service_rectangle_area_generate_messages_eus"
+	@echo "... list_install_components"
 	@echo "... test"
+	@echo "... hw4_service_rectangle_area_gennodejs"
+	@echo "... hw4_service_rectangle_area_generate_messages_nodejs"
+	@echo "... hw4_service_rectangle_area_geneus"
+	@echo "... hw4_service_rectangle_area_generate_messages_lisp"
+	@echo "... hw4_service_rectangle_area_gencpp"
+	@echo "... hw4_service_rectangle_area_genpy"
+	@echo "... hw4_service_rectangle_area_generate_messages_eus"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... install"
+	@echo "... hw4_service_rectangle_area_genlisp"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... _hw4_service_rectangle_area_generate_messages_check_deps_RectangleAreaService"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... hw4_service_rectangle_area_generate_messages"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... hw4_service_rectangle_area_generate_messages_py"
+	@echo "... hw4_service_rectangle_area_generate_messages_cpp"
 .PHONY : help
 
 
