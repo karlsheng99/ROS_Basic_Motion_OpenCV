@@ -68,18 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -135,6 +123,18 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/ubuntu/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/catkin_ws/build/CMakeFiles /home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/progress.marks
@@ -167,6 +167,90 @@ depend:
 	cd /home/ubuntu/catkin_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+ros_perception/CMakeFiles/image_pub_sub_exe.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_perception/CMakeFiles/image_pub_sub_exe.dir/rule
+.PHONY : ros_perception/CMakeFiles/image_pub_sub_exe.dir/rule
+
+# Convenience name for target.
+image_pub_sub_exe: ros_perception/CMakeFiles/image_pub_sub_exe.dir/rule
+
+.PHONY : image_pub_sub_exe
+
+# fast build rule for target.
+image_pub_sub_exe/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f ros_perception/CMakeFiles/image_pub_sub_exe.dir/build.make ros_perception/CMakeFiles/image_pub_sub_exe.dir/build
+.PHONY : image_pub_sub_exe/fast
+
+# Convenience name for target.
+ros_perception/CMakeFiles/video_read_cpp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_perception/CMakeFiles/video_read_cpp.dir/rule
+.PHONY : ros_perception/CMakeFiles/video_read_cpp.dir/rule
+
+# Convenience name for target.
+video_read_cpp: ros_perception/CMakeFiles/video_read_cpp.dir/rule
+
+.PHONY : video_read_cpp
+
+# fast build rule for target.
+video_read_cpp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f ros_perception/CMakeFiles/video_read_cpp.dir/build.make ros_perception/CMakeFiles/video_read_cpp.dir/build
+.PHONY : video_read_cpp/fast
+
+src/image_pub_sub.o: src/image_pub_sub.cpp.o
+
+.PHONY : src/image_pub_sub.o
+
+# target to build an object file
+src/image_pub_sub.cpp.o:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f ros_perception/CMakeFiles/image_pub_sub_exe.dir/build.make ros_perception/CMakeFiles/image_pub_sub_exe.dir/src/image_pub_sub.cpp.o
+.PHONY : src/image_pub_sub.cpp.o
+
+src/image_pub_sub.i: src/image_pub_sub.cpp.i
+
+.PHONY : src/image_pub_sub.i
+
+# target to preprocess a source file
+src/image_pub_sub.cpp.i:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f ros_perception/CMakeFiles/image_pub_sub_exe.dir/build.make ros_perception/CMakeFiles/image_pub_sub_exe.dir/src/image_pub_sub.cpp.i
+.PHONY : src/image_pub_sub.cpp.i
+
+src/image_pub_sub.s: src/image_pub_sub.cpp.s
+
+.PHONY : src/image_pub_sub.s
+
+# target to generate assembly for a file
+src/image_pub_sub.cpp.s:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f ros_perception/CMakeFiles/image_pub_sub_exe.dir/build.make ros_perception/CMakeFiles/image_pub_sub_exe.dir/src/image_pub_sub.cpp.s
+.PHONY : src/image_pub_sub.cpp.s
+
+src/video_read.o: src/video_read.cpp.o
+
+.PHONY : src/video_read.o
+
+# target to build an object file
+src/video_read.cpp.o:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f ros_perception/CMakeFiles/video_read_cpp.dir/build.make ros_perception/CMakeFiles/video_read_cpp.dir/src/video_read.cpp.o
+.PHONY : src/video_read.cpp.o
+
+src/video_read.i: src/video_read.cpp.i
+
+.PHONY : src/video_read.i
+
+# target to preprocess a source file
+src/video_read.cpp.i:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f ros_perception/CMakeFiles/video_read_cpp.dir/build.make ros_perception/CMakeFiles/video_read_cpp.dir/src/video_read.cpp.i
+.PHONY : src/video_read.cpp.i
+
+src/video_read.s: src/video_read.cpp.s
+
+.PHONY : src/video_read.s
+
+# target to generate assembly for a file
+src/video_read.cpp.s:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f ros_perception/CMakeFiles/video_read_cpp.dir/build.make ros_perception/CMakeFiles/video_read_cpp.dir/src/video_read.cpp.s
+.PHONY : src/video_read.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,12 +258,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... install/local"
+	@echo "... image_pub_sub_exe"
+	@echo "... video_read_cpp"
+	@echo "... src/image_pub_sub.o"
+	@echo "... src/image_pub_sub.i"
+	@echo "... src/image_pub_sub.s"
+	@echo "... src/video_read.o"
+	@echo "... src/video_read.i"
+	@echo "... src/video_read.s"
 .PHONY : help
 
 

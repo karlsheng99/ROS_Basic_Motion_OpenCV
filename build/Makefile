@@ -1624,6 +1624,32 @@ _ros_essentials_cpp_generate_messages_check_deps_AddTwoInts/fast:
 .PHONY : _ros_essentials_cpp_generate_messages_check_deps_AddTwoInts/fast
 
 #=============================================================================
+# Target rules for targets named image_pub_sub_exe
+
+# Build rule for target.
+image_pub_sub_exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_pub_sub_exe
+.PHONY : image_pub_sub_exe
+
+# fast build rule for target.
+image_pub_sub_exe/fast:
+	$(MAKE) -f ros_perception/CMakeFiles/image_pub_sub_exe.dir/build.make ros_perception/CMakeFiles/image_pub_sub_exe.dir/build
+.PHONY : image_pub_sub_exe/fast
+
+#=============================================================================
+# Target rules for targets named video_read_cpp
+
+# Build rule for target.
+video_read_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 video_read_cpp
+.PHONY : video_read_cpp
+
+# fast build rule for target.
+video_read_cpp/fast:
+	$(MAKE) -f ros_perception/CMakeFiles/video_read_cpp.dir/build.make ros_perception/CMakeFiles/video_read_cpp.dir/build
+.PHONY : video_read_cpp/fast
+
+#=============================================================================
 # Target rules for targets named diagnostic_msgs_generate_messages_py
 
 # Build rule for target.
@@ -2723,6 +2749,8 @@ help:
 	@echo "... _ros_essentials_cpp_generate_messages_check_deps_FibonacciGoal"
 	@echo "... _ros_essentials_cpp_generate_messages_check_deps_FibonacciResult"
 	@echo "... _ros_essentials_cpp_generate_messages_check_deps_AddTwoInts"
+	@echo "... image_pub_sub_exe"
+	@echo "... video_read_cpp"
 	@echo "... diagnostic_msgs_generate_messages_py"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
 	@echo "... diagnostic_msgs_generate_messages_lisp"

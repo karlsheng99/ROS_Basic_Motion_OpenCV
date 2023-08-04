@@ -656,6 +656,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "ros_essentials_cpp/CMakeFiles/_ros_essentials_cpp_generate_messages_check_deps_FibonacciGoal.dir/DependInfo.cmake"
   "ros_essentials_cpp/CMakeFiles/_ros_essentials_cpp_generate_messages_check_deps_FibonacciResult.dir/DependInfo.cmake"
   "ros_essentials_cpp/CMakeFiles/_ros_essentials_cpp_generate_messages_check_deps_AddTwoInts.dir/DependInfo.cmake"
+  "ros_perception/CMakeFiles/image_pub_sub_exe.dir/DependInfo.cmake"
+  "ros_perception/CMakeFiles/video_read_cpp.dir/DependInfo.cmake"
   "turtlebot3/turtlebot3_bringup/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/DependInfo.cmake"
   "turtlebot3/turtlebot3_bringup/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "turtlebot3/turtlebot3_bringup/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/DependInfo.cmake"

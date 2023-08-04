@@ -195,12 +195,14 @@
 /home/ubuntu/catkin_ws/build/ros_motion/CMakeFiles/edit_cache.dir
 /home/ubuntu/catkin_ws/build/ros_motion/CMakeFiles/test.dir
 /home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/install/strip.dir
-/home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/install/local.dir
 /home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/install.dir
 /home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/list_install_components.dir
 /home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/rebuild_cache.dir
 /home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/edit_cache.dir
 /home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/test.dir
+/home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/install/local.dir
+/home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/image_pub_sub_exe.dir
+/home/ubuntu/catkin_ws/build/ros_perception/CMakeFiles/video_read_cpp.dir
 /home/ubuntu/catkin_ws/build/turtlebot3/turtlebot3_bringup/CMakeFiles/install/strip.dir
 /home/ubuntu/catkin_ws/build/turtlebot3/turtlebot3_bringup/CMakeFiles/install/local.dir
 /home/ubuntu/catkin_ws/build/turtlebot3/turtlebot3_bringup/CMakeFiles/install.dir
