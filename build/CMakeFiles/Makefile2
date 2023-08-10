@@ -61,6 +61,7 @@ all: turtlebot3_simulations/turtlebot3_simulations/all
 all: hw4_service_rectangle_area/all
 all: ros_basics_tutorials/all
 all: ros_essentials_cpp/all
+all: ros_laser_scan/all
 all: ros_motion/all
 all: ros_perception/all
 all: turtlebot3/turtlebot3_bringup/all
@@ -82,6 +83,7 @@ preinstall: turtlebot3_simulations/turtlebot3_simulations/preinstall
 preinstall: hw4_service_rectangle_area/preinstall
 preinstall: ros_basics_tutorials/preinstall
 preinstall: ros_essentials_cpp/preinstall
+preinstall: ros_laser_scan/preinstall
 preinstall: ros_motion/preinstall
 preinstall: ros_perception/preinstall
 preinstall: turtlebot3/turtlebot3_bringup/preinstall
@@ -108,6 +110,7 @@ clean: turtlebot3_simulations/turtlebot3_simulations/clean
 clean: hw4_service_rectangle_area/clean
 clean: ros_basics_tutorials/clean
 clean: ros_essentials_cpp/clean
+clean: ros_laser_scan/clean
 clean: ros_motion/clean
 clean: ros_perception/clean
 clean: turtlebot3/turtlebot3_bringup/clean
@@ -323,6 +326,24 @@ ros_essentials_cpp/clean: ros_essentials_cpp/CMakeFiles/_ros_essentials_cpp_gene
 ros_essentials_cpp/clean: ros_essentials_cpp/CMakeFiles/_ros_essentials_cpp_generate_messages_check_deps_AddTwoInts.dir/clean
 
 .PHONY : ros_essentials_cpp/clean
+
+#=============================================================================
+# Directory level rules for directory ros_laser_scan
+
+# Recursive "all" directory target.
+ros_laser_scan/all:
+
+.PHONY : ros_laser_scan/all
+
+# Recursive "preinstall" directory target.
+ros_laser_scan/preinstall:
+
+.PHONY : ros_laser_scan/preinstall
+
+# Recursive "clean" directory target.
+ros_laser_scan/clean:
+
+.PHONY : ros_laser_scan/clean
 
 #=============================================================================
 # Directory level rules for directory ros_motion
